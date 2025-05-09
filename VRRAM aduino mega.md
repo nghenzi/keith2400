@@ -18,8 +18,8 @@ The sketch allows users to send commands via the Arduino's serial interface to s
     * One pair (2 total) for the ENABLE group (forms a 16-bit register).
     * One single 74LS595 for the MUX_TE group (forms an 8-bit register).
 * **Multiplexers:**
-    * Eight 16-channel analog/digital multiplexers (e.g., CD4067B or 74HC4067) for MUX_BE12 and MUX_BE34.
-    * Two 16-channel analog/digital multiplexers for MUX_TE.
+    * Eight 16-channel analog/digital multiplexers for MUX_BE12 and MUX_BE34. These are the 4 BE layers
+    * Two 16-channel analog/digital multiplexers for MUX_TE. this is the TE pads. 
 * **Connecting Wires**
 * **Power Supply (5V)** for the shift registers and multiplexers.
 
@@ -202,4 +202,3 @@ All commands consist of a command prefix followed by a space and a `VALUE`.
 * **Command Names:** If desired, the command prefix strings (e.g., `"muxBE12 "`) can be changed in the `loop()` function and `printGeneralUsage()`.
 * **Adding More Groups:** The structure allows for adding more shift register groups by defining new pins, adding new command handling in `loop()`, and potentially creating new parsing functions if the data format differs.
 
-This documentation should provide a solid understanding of how to set up, use, and potentially modify the Arduino sketch for controlling your 74LS595 shift registers and multiplexers.
